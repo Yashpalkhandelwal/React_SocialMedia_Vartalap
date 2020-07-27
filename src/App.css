@@ -1,19 +1,81 @@
 * {
-    margin: 0;
+  margin: 0;
 }
-.app {
-    background-color: #faf8f8;
-    height: 100vh;
-}
-.app_header {
-    object-fit: contain;
-    padding: 20px;
-    background-color: white;
-    border-bottom: 1px solid lightgray;
-    
-}
-.app_logo {
-    font-family: "Old Growth";
-    font-size: 20px;
 
+.app {
+  background-color: white;
+}
+
+.app__signup > * {
+  margin: 20px;
+}
+
+.app__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+  object-fit: contain;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app_logo {
+  margin-left: 15%;
+  font-family: 'Old Growth';
+  font-size: small;
+  object-fit: contain;
+}
+
+.app__posts {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.app__logoutContainer{
+  margin-left: 15%;
+}
+.app__signup {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__loginmessage {
+  text-align: center;
+  padding: 50px;
+  margin-left:15%;
+}
+
+.app_bottom{
+  overflow: hidden;
+  background-color: #eee;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.app_addpostbutton{  
+  margin-left: 25%;
+  align-items: center;
+}
+
+.app_addposticon{ 
+  width: 30px;
+  height: 30px;  
+  text-align: center;
+  margin-right: 10px;  
+ 
+}
+
+@media (max-width: 1000px) {
+  .app__posts {
+    flex-direction: column;
+    align-items: center;
+  }
 }
