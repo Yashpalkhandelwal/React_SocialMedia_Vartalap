@@ -52,7 +52,7 @@ function Post({ imageUrl, user, username, caption, postId }) {
         <strong>{username}</strong> {caption}
       </h4>
 
-      <div className="post__comments">
+      <div className="post__comments">...      
         {comments.map((comment) => (
           <p>
             <strong>{comment.username}</strong> {comment.text}
@@ -61,7 +61,7 @@ function Post({ imageUrl, user, username, caption, postId }) {
       </div>
 
       {user && (
-        <form className="post__commentBox">
+        <form className="post__commentBox">            
           <input
             className="post__input"
             type="text"

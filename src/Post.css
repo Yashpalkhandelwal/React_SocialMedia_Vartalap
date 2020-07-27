@@ -19,16 +19,22 @@
 .post__header {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .post__avatar {
   margin-right: 10px;
 }
 
+.post__avatarcmt{
+  height: 5px;
+  width: 5px;
+  margin-left: 10px;
+}
+
 .post__text {
   padding: 10px;
-  border-bottom: 1px solid lightgray;
+  
 }
 
 .post__commentBox {
@@ -37,7 +43,8 @@
 }
 
 .post__comments {
-  padding: 10px;
+  margin-top: 0;
+  padding-left: 10px;
 }
 
 .post__input {

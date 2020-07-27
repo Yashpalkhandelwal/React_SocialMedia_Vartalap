@@ -6,7 +6,8 @@ import {makeStyles} from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import {Button, Input} from "@material-ui/core";
 import ImageUpload from "./ImageUpload";
-import "./plus.png";
+import Avatar from "@material-ui/core/avatar";
+import TextField from '@material-ui/core/TextField';
 
 function getModalStyle() {
     const top = 50;
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         position: "absolute",
         width: 400,
         backgroundColor: theme.palette.background.paper,
-        border: "2px solid #000",
+        border: "2px solid #eee",
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3)
     }
@@ -152,10 +153,25 @@ function App() {
                 {
                     user
                         ? (
-                            <div className="app__logoutContainer">
-                                <Button onClick={() => auth.signOut()}>Logout</Button>
+                        <div className="app_userheader">
+                            <div className="app_searchbox">
+                            <TextField                             
+                            id="outlined-search" 
+                            label="Search " 
+                            type="search"
+                            variant="outlined" />
                             </div>
-                            )
+                            <div className="app_userinfo">                                 
+                                <Avatar
+                                    className="app__avatar"
+                                    alt={username}
+                                    src="/static/images/avatar/2.jpg"/>
+                                <div className="app__logoutContainer">
+                                    <Button onClick={() => auth.signOut()}>Logout</Button>
+                                </div>
+                            </div>
+                            </div>
+                        )
                         : (
                             <div className="app__loginContainer">
                                 <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
@@ -183,7 +199,15 @@ function App() {
                                     }
                                 </div>
                                 <div className="app_bottom">
-                                  <Button className="app_addpostbutton" onClick={() => setOpenAddPost(true)}><img className="app_addposticon" src="https://image.flaticon.com/icons/svg/1004/1004759.svg"  alt="Add Post"/>Add post</Button>                                   
+                                    <div className="app_postion">
+                                    <Button className="app_addpostbutton" onClick={() => setOpenAddPost(true)}>
+                                        <img
+                                        className="app_addposticon"
+                                        src="https://image.flaticon.com/icons/svg/1004/1004759.svg"
+                                        alt="Add Post"/>
+                                        Add post
+                                    </Button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -197,13 +221,16 @@ function App() {
             <Modal open={openaddpost} onClose={() => setOpenAddPost(false)}>
                 <div style={modalStyle} className={classes.paper}>
                     <form className="app__signup">
-                    {user?.displayName ? (
-        <ImageUpload username={user.displayName} />
-      ) : (
-        <h3 className="app__loginmessage">
-          Sorry! Something went wrong...
-        </h3>
-      )}
+                        {
+                            user
+                                ?.displayName
+                                    ? (<ImageUpload username={user.displayName}/>)
+                                    : (
+                                        <h3 className="app__loginmessage">
+                                            Sorry! Something went wrong...
+                                        </h3>
+                                    )
+                        }
                     </form>
                 </div>
             </Modal>
