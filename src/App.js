@@ -94,7 +94,7 @@ function App() {
                     <form className="app__signup">
                         <center>
                             <h1 className="app_logo">
-                                Vartalapp
+                            postgram
                             </h1>
                         </center>
                         <Input
@@ -125,7 +125,7 @@ function App() {
                     <form className="app__signup">
                         <center>
                             <h1 className="app_logo">
-                                Vartalapp
+                            postgram
                             </h1>
                         </center>
                         <Input
@@ -148,7 +148,7 @@ function App() {
 
             <div className="app__header">
                 <h1 className="app_logo">
-                    Vartalapp
+                postgram
                 </h1>
                 {
                     user
@@ -215,6 +215,10 @@ function App() {
                         : (
                             <h3 className="app__loginmessage">
                                 Sorry! you need to login to upload
+                                <img 
+                                className="app_img"
+                                src="https://appinventiv.com/wp-content/uploads/sites/1/2019/08/banner-How-to-Estimate-the-Social-Media-App-Development-Cost-Budget-02.png" 
+                                />                                
                             </h3>
                         )
             }

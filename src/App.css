@@ -63,12 +63,19 @@
   flex-direction: column;
 }
 
-.app__loginmessage {
+.app__loginmessage { 
+  
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  padding: 50px;
-  margin-left:15%;
+  margin: 0;
+  
 }
-
+.app_img{    
+  width: 100%;
+  object-fit: contain;
+}
 .app_bottom{
   position: sticky;
   bottom: 0;
